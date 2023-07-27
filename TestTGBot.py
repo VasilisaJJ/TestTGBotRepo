@@ -40,13 +40,17 @@ def handle_text(message):
     if message.text == "/other":
         bot.send_message(message.chat.id, 'Остальные варианты', reply_markup=create_keyboard_other())
     elif message.text == 'Про GPT':
-        audio_url_gpt = 'https://github.com/VasilisaJJ/TestTGBotRepo/blob/main/ПроGPT.mp3'
+        audio_url_gpt = open('AboutGPT.mp3', 'rb')
         bot.send_message(message.chat.id, "Вы выбрали послушать объяснения для Бабули про GPT")
         bot.send_audio(message.chat.id, audio_url_gpt)
     elif message.text == 'Про разницу между SQL и NoSQL':
+        audio_url_sql_nosql = open('AboutDifferenceBetweenSQL&NoSQL.mp3', 'rb')
         bot.send_message(message.chat.id, "Вы выбрали послушать объяснения для Бабули про разницу между SQL и NoSQL")
+        bot.send_audio(message.chat.id, audio_url_sql_nosql)
     elif message.text == 'Про первую любовь':
+        audio_url_first_love = open('AboutFirstLove.mp3', 'rb')
         bot.send_message(message.chat.id, "Вы выбрали послушать про первую любовь Василисы")
+        bot.send_audio(message.chat.id, audio_url_first_love)
     elif message.text == 'Предыдущие варианты':
         bot.send_message(message.chat.id, 
                          "Вы выбрали предыдущие варианты",
